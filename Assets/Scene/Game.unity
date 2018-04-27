@@ -22600,9 +22600,24 @@ Prefab:
       propertyPath: m_Size.y
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1892420787937326, guid: 8cc81305d37e7f546ac8b6604aca1497, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95941530780404234, guid: 8cc81305d37e7f546ac8b6604aca1497,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 337f0d067858c0e4db477f90c27182d3, type: 2}
+    - target: {fileID: 70242907774875010, guid: 8cc81305d37e7f546ac8b6604aca1497,
+        type: 2}
+      propertyPath: m_Direction
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114243888756026540, guid: 8cc81305d37e7f546ac8b6604aca1497, type: 2}
     - {fileID: 50891965311963048, guid: 8cc81305d37e7f546ac8b6604aca1497, type: 2}
+    - {fileID: 114561084502588764, guid: 8cc81305d37e7f546ac8b6604aca1497, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8cc81305d37e7f546ac8b6604aca1497, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1355533842
@@ -22615,9 +22630,9 @@ GameObject:
   - component: {fileID: 1355533846}
   - component: {fileID: 1355533845}
   - component: {fileID: 1355533843}
-  - component: {fileID: 1355533847}
   - component: {fileID: 1355533848}
   - component: {fileID: 1355533844}
+  - component: {fileID: 1355533847}
   m_Layer: 0
   m_Name: P
   m_TagString: Untagged
@@ -22745,7 +22760,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &1355533848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22774,7 +22789,6 @@ GameObject:
   - component: {fileID: 1570965592}
   - component: {fileID: 1570965593}
   - component: {fileID: 1570965594}
-  - component: {fileID: 1570965595}
   m_Layer: 0
   m_Name: sword
   m_TagString: Weapon
@@ -22864,17 +22878,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 10.24}
   m_EdgeRadius: 0
---- !u!114 &1570965595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1570965591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d9e4fe8da7391a4f967890cd27a665d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1639995606
 GameObject:
   m_ObjectHideFlags: 0
@@ -23143,6 +23146,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1892420787937326, guid: 8cc81305d37e7f546ac8b6604aca1497,
     type: 2}
   m_PrefabInternal: {fileID: 1255197550}
+--- !u!4 &1940310872 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4985777773331140, guid: 8cc81305d37e7f546ac8b6604aca1497,
+    type: 2}
+  m_PrefabInternal: {fileID: 1255197550}
 --- !u!114 &1940310873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23160,12 +23168,7 @@ MonoBehaviour:
   IsJumpForce: 0
   GroundLayer:
     serializedVersion: 2
-    m_Bits: 0
---- !u!4 &1940310874 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4985777773331140, guid: 8cc81305d37e7f546ac8b6604aca1497,
-    type: 2}
-  m_PrefabInternal: {fileID: 1255197550}
+    m_Bits: 256
 --- !u!50 &1940310875
 Rigidbody2D:
   serializedVersion: 4
@@ -23220,7 +23223,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 1940310874}
+  m_Follow: {fileID: 1940310872}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 2
