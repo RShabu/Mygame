@@ -704,6 +704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4651068261199858}
   - component: {fileID: 95222202409354866}
+  - component: {fileID: 114773446109931390}
   m_Layer: 0
   m_Name: BURLY-MAN_1_swordsman_model
   m_TagString: Untagged
@@ -1522,6 +1523,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114773446109931390
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1899552673243524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c014edbc424ead449b37a20200a66629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!212 &212018564791166054
 SpriteRenderer:
   m_ObjectHideFlags: 1
