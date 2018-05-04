@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterHealth : MonoBehaviour {
+public class Monster : MonoBehaviour {
 
-    public GameObject player;
+    public Rigidbody2D Rigid;
     public int MonsterHP = 100;
-    public Rigidbody2D rb;
+    public float MosterMoveSpeed = 1f;
+    
 
+    // Use this for initialization
+    void Start () {
 
-	// Use this for initialization
-	void Start () {
-       rb = GetComponent<Rigidbody2D>();
+       Rigid = GetComponent<Rigidbody2D>();
        
 	}
 	
@@ -20,18 +21,19 @@ public class MonsterHealth : MonoBehaviour {
 		
         if(MonsterHP <= 0)
         {
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            Rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
             Destroy(gameObject, 2);
         }
-
 	}
 
     private void FixedUpdate()
     {
-        if(tag == "Weapon")
-        {
-         
-        }
+        
+    }
+
+    void MosterMove()
+    {
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
