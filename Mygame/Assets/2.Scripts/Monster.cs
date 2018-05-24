@@ -24,7 +24,12 @@ public class Monster : MonoBehaviour {
 		
         if(MonsterHP <= 0)
         {
-            Rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
+            foreach(Collider2D col in this.gameObject.GetComponentsInChildren<Collider2D>())
+            {
+                col.enabled = false;
+            }
+            Rigid.constraints = RigidbodyConstraints2D.FreezeAll;
+            //에니메이션
             Destroy(gameObject, 2);
         }
 	}
@@ -37,16 +42,16 @@ public class Monster : MonoBehaviour {
     IEnumerator MovementCount()
     {
         moveChange = Random.Range(0, 3);
-        Debug.Log("addaf");
+        Debug.Log("moveChange");
         
         if (moveChange == 0)
             animator.SetBool("IsMoving", false);
         else
             animator.SetBool("IsMoving", true);
             
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
-        Debug.Log("addaf");
+        Debug.Log("WaitForSeconds");
 
         StartCoroutine("MovementCount");
     }
@@ -65,7 +70,6 @@ public class Monster : MonoBehaviour {
             transform.localScale = new Vector3(-3f, 3f, 1f);
         }
         
-
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -73,7 +77,6 @@ public class Monster : MonoBehaviour {
         if (other.gameObject.tag == "Weapon")
         {
             MonsterHP -= 20;
-            MonsterMoveSpeed = 0f;
         }
     }
 
