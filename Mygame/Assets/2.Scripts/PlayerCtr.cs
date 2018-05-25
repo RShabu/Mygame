@@ -11,9 +11,9 @@ public class PlayerCtr : MonoBehaviour {
     public float Speed = 5.0f;
     public float MoveSpeed = 5.0f;
     public float AttackMoveSpeed = 2.5f;
-
     public float jump = 5.0f;
     public int JumpCount = 1;
+
 
     public bool IsJumpForce = false;
     public bool IsAttack = false;

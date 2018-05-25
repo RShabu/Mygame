@@ -30,6 +30,8 @@ public class Monster : MonoBehaviour {
             }
             Rigid.constraints = RigidbodyConstraints2D.FreezeAll;
             //에니메이션
+            
+            MonsterMoveSpeed = 0f;
             Destroy(gameObject, 2);
         }
 	}
