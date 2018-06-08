@@ -33447,7 +33447,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1609516993}
   m_HandleRect: {fileID: 0}
@@ -33455,7 +33455,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.784
+  m_Value: 0.108
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -34599,13 +34599,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1254957101}
   - component: {fileID: 1254957102}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1254957101
 Transform:
   m_ObjectHideFlags: 0
@@ -34625,10 +34625,10 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1254957100}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.03, y: -0.04}
@@ -36166,8 +36166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28865225262b99145a50560038acdb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: {fileID: 0}
   MonsterHP: 100
   MonsterMoveSpeed: 1
+  MonsterAttack: 20
 --- !u!1 &1706574459
 GameObject:
   m_ObjectHideFlags: 0
@@ -36553,7 +36555,7 @@ GameObject:
   - component: {fileID: 1860334795}
   - component: {fileID: 1860334794}
   - component: {fileID: 1860334797}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Monster1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36627,7 +36629,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.03, y: -0.04}
@@ -36654,8 +36656,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28865225262b99145a50560038acdb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1940310876}
   MonsterHP: 100
   MonsterMoveSpeed: 1
+  MonsterAttack: 20
 --- !u!50 &1860334796
 Rigidbody2D:
   serializedVersion: 4
@@ -36861,10 +36865,11 @@ GameObject:
   - component: {fileID: 1940310871}
   - component: {fileID: 1940310875}
   - component: {fileID: 1940310873}
+  - component: {fileID: 1940310876}
   - component: {fileID: 1940310874}
   m_Layer: 11
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36955,6 +36960,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1940310876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1940310870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c409e7fc8458d943a9590ff0b2a83ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerMaxHP: 100
+  PlayerMaxEP: 100
+  PlayerHP: 0
+  PlayerEP: 0
+  isDamage: 0
+  slider: {fileID: 813671816}
 --- !u!1 &1999216315
 GameObject:
   m_ObjectHideFlags: 0

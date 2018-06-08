@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour {
 
+    [SerializeField]
+    PlayerHealth playerHealth;
     Animator animator;
     Rigidbody2D Rigid;
     public int MonsterHP = 100;
     public float MonsterMoveSpeed = 1f;
     private int moveChange = 0;
-
+    public int MonsterAttack = 20;
 
     // Use this for initialization
     void Start () {
-    
+
         Rigid = GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         StartCoroutine("MovementCount");
@@ -79,6 +81,10 @@ public class Monster : MonoBehaviour {
         if (other.gameObject.tag == "Weapon")
         {
             MonsterHP -= 20;
+        }
+        if (other.gameObject.tag == "Player")
+        {
+            playerHealth.Damage(MonsterAttack);
         }
     }
 
